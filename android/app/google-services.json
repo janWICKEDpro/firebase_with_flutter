@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893607674057",
+    "project_id": "coffee-da583",
+    "storage_bucket": "coffee-da583.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893607674057:android:15e024c32009358beb8d18",
+        "android_client_info": {
+          "package_name": "com.janroyal.firebase_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893607674057-4egqbr150244s9uukn63luv2hhqtq0co.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJvdLkn5nEde8AoFOqMzfVRo46NuK2jkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893607674057-4egqbr150244s9uukn63luv2hhqtq0co.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

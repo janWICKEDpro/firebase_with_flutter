@@ -1,23 +1,15 @@
+import 'package:firebase_app/Screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(FireApp());
+  runApp(Fire());
 }
-
-class FireApp extends StatefulWidget{
-  @override
-  State<FireApp> createState() {
-    FireAppState();
-  }
-}
-
-class FireAppState extends State<FireApp>{
+class Fire extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return MaterialApp(
+      home: Wrapper(),
     );
-
   }
-
 }
+

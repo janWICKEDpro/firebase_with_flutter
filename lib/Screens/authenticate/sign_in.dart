@@ -26,6 +26,7 @@ final AuthService _authService = AuthService();
               print("error");
             }else{
               print("sign");
+              print(res);
             }
           },
         ),

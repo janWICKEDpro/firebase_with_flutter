@@ -7,6 +7,11 @@ class AuthService{
     return user!=null ? Users(uid: user.uid) : null;
   }
 
+  Stream<Users> get user {
+    return _auth.authStateChanges()
+        .map(_getUserId);
+  }
+
   Future signInAnon() async {
     try {
      UserCredential result = await _auth.signInAnonymously();

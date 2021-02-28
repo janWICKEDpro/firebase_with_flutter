@@ -29,7 +29,7 @@ class Fire extends StatelessWidget{
           return StreamProvider<Users>.value(
             value: AuthService().user,
             child: MaterialApp(
-              home:SignIn()
+              home:Wrapper()
             )
           );
         }

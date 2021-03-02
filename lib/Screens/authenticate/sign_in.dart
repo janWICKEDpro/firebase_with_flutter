@@ -8,6 +8,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  bool isObscure = true;
+  String email = '';
+  String password = '';
 final AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
@@ -18,19 +21,48 @@ final AuthService _authService = AuthService();
         title: Text("Sign in to Brew Crew"),
       ),
       body: Container(
-        child: RaisedButton(
-          child: Text('Sign in anonymous'),
-          onPressed: () async{
-            dynamic res = await _authService.signInAnon();
-            if(res == null){
-              print("error");
-            }else{
-              print("sign");
-              print(res);
-            }
-          },
-        ),
-    ),
+        child: Form(
+          child: Column(
+            children: [
+              SizedBox(height: 20,),
+              TextFormField(
+                decoration: InputDecoration(
+                    prefix: Icon(Icons.mail_outline),
+                    labelText: "email",
+
+                ),
+                onChanged: (val){
+                  setState(() {
+                    email = val;
+                  });
+                },
+              ),
+              SizedBox(height: 20,),
+              TextFormField(
+                decoration: InputDecoration(
+                  prefix: Icon(Icons.lock),
+                  labelText: "password",
+                  suffix: FlatButton(
+                    child: isObscure? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                    onPressed: (){
+                      setState(() {
+                        isObscure = !isObscure;
+                      });
+                    }
+                  )
+                ),
+                obscureText: isObscure,
+                onChanged: (val){
+                  setState(() {
+                    password = val;
+                  });
+                },
+              ),
+
+            ],
+          ),
+        )
+      )
     );
   }
 }

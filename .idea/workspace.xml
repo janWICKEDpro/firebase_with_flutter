@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8585dc67-be46-48e9-91cf-4a871dbde7e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/Screens/authenticate/Register.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/authenticate/sign_in.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/authenticate/sign_in.dart" afterDir="false" />
     </list>
@@ -84,10 +85,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1286" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614557424978" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1614715561875">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1614752915106">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1614715561875" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1614752915106" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1614450009462">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

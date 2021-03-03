@@ -15,6 +15,7 @@ class _SignInState extends State<SignIn> {
   String email = '';
   String password = '';
 final AuthService _authService = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +24,7 @@ final AuthService _authService = AuthService();
         backgroundColor: Colors.brown[500],
         title: Text("Sign in to Brew Crew"),
         actions: [
-          FlatButton.icon(onPressed: (){
-            widget.toggle;
-          }, icon: Icon(Icons.account_box), label: Text("Login"))
+          FlatButton.icon(onPressed: ()=> widget.toggle(),icon: Icon(Icons.account_box), label: Text("Register"))
         ],
       ),
       body: Container(
@@ -73,7 +72,10 @@ final AuthService _authService = AuthService();
     ),
 
     RaisedButton(
-    onPressed: (){},
+    onPressed: () async{
+
+
+    },
      child: Text("Get In"),
     color: Colors.pink,
     )

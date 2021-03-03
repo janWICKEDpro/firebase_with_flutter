@@ -9,7 +9,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-
+  final _formKey = GlobalKey<FormState>();
   final AuthService _auth =AuthService();
   String email = '';
   String password = '';
@@ -28,11 +28,13 @@ class _RegisterState extends State<Register> {
         ),
         body: Container(
             child: Form(
+              key: _formKey,
               child: Column(
                 children: [
                   SizedBox(height: 20,),
                   Padding(padding: EdgeInsets.all(8.0),
                     child: TextFormField(
+                      validator: (val)=> val.isEmpty?'Enter a valid email':null,
                       decoration: InputDecoration(
                         prefix: Icon(Icons.mail_outline),
                         labelText: "email",
@@ -49,19 +51,13 @@ class _RegisterState extends State<Register> {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: TextFormField(
+                      validator: (val) => val.length <6 ? 'Enter a password 6 characters long': null,
                       decoration: InputDecoration(
                           prefix: Icon(Icons.lock),
                           labelText: "password",
-                          suffix: FlatButton(
-                              child: isObscure? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-                              onPressed: (){
-                                setState(() {
-                                  isObscure = !isObscure;
-                                });
-                              }
-                          )
+
                       ),
-                      obscureText: isObscure,
+                      obscureText: true,
                       onChanged: (val){
                         setState(() {
                           password = val;
@@ -71,7 +67,12 @@ class _RegisterState extends State<Register> {
                   ),
 
                   RaisedButton(
-                    onPressed: (){},
+                    onPressed: () async{
+                      if(_formKey.currentState.validate()){
+                        print(email);
+                        print(password);
+                      }
+                    },
                     child: Text("Get In"),
                     color: Colors.pink,
                   )

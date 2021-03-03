@@ -1,6 +1,7 @@
 import 'package:firebase_app/Screens/authenticate/authenticate.dart';
 import 'package:firebase_app/Screens/authenticate/sign_in.dart';
 import 'package:firebase_app/Screens/wrapper.dart';
+import 'package:firebase_app/loading.dart';
 import 'package:firebase_app/models/user.dart';
 import 'package:firebase_app/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class Fire extends StatelessWidget{
           );
         }
         return MaterialApp(
-            home: Text("loading")
+            home: Loading()
         );
       }
     );

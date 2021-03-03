@@ -1,3 +1,4 @@
+import 'package:firebase_app/loading.dart';
 import 'package:firebase_app/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,12 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth =AuthService();
+  bool isLoading = false;
   String email = '';
   String password = '',error = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return isLoading? Loading():Scaffold(
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
           backgroundColor: Colors.brown[500],
@@ -68,15 +70,19 @@ class _RegisterState extends State<Register> {
                   RaisedButton(
                     onPressed: () async{
                       if(_formKey.currentState.validate()){
+                        setState(() {
+                          isLoading =true;
+                        });
                       dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                       if(result==null){
                         setState(() {
+                          isLoading =false;
                           error = 'enter valid email';
                         });
                       }
                       }
                     },
-                    child: Text("Get In"),
+                    child: Text("Register"),
                     color: Colors.pink,
                   ),
                   SizedBox(height: 10,),

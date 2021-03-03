@@ -1,4 +1,5 @@
 
+import 'package:firebase_app/loading.dart';
 import 'package:firebase_app/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,16 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  bool isObscure = true;
+  bool isObscure = true, isLoading = false;
   String email = '';
   String password = '';
+  String error = '';
 final AuthService _authService = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return isLoading? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[500],
@@ -29,15 +32,15 @@ final AuthService _authService = AuthService();
       ),
       body: Container(
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               SizedBox(height: 20,),
               Padding(padding: EdgeInsets.all(8.0),
               child: TextFormField(
+                validator: (val)=> val.isEmpty?'Enter a valid email':null,
                 decoration: InputDecoration(
-                    prefix: Icon(Icons.mail_outline),
                     labelText: "email",
-
                 ),
                 onChanged: (val){
                   setState(() {
@@ -50,8 +53,8 @@ final AuthService _authService = AuthService();
               Padding(
               padding: EdgeInsets.all(8.0),
              child: TextFormField(
+               validator: (val) => val.length <6 ? 'Enter a password 6 characters long': null,
                 decoration: InputDecoration(
-                  prefix: Icon(Icons.lock),
                   labelText: "password",
                   suffix: FlatButton(
                     child: isObscure? Icon(Icons.visibility_off) : Icon(Icons.visibility),
@@ -73,12 +76,24 @@ final AuthService _authService = AuthService();
 
     RaisedButton(
     onPressed: () async{
-
-
+    if(_formKey.currentState.validate()){
+      setState(() {
+        isLoading = true;
+      });
+      dynamic res = await _authService.signInWithEmailAndPassword(email, password);
+      if(res==null){
+          setState(() {
+            isLoading=false;
+            error= 'Could not sign In with those credentials';
+          });
+      }
+    }
     },
-     child: Text("Get In"),
+     child: Text("Sign In"),
     color: Colors.pink,
-    )
+    ),
+              SizedBox(height: 10,),
+              Text(error,style: TextStyle(color: Colors.red),)
 
             ],
           ),

@@ -28,6 +28,7 @@ class Fire extends StatelessWidget{
         }
         if(snapshot.connectionState == ConnectionState.done){
           return StreamProvider<Users>.value(
+            initialData: Users(),
             value: AuthService().user,
             child: MaterialApp(
               home:Wrapper()

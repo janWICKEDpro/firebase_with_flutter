@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_app/models/brew.dart';
 
 class DatabaseService{
 
@@ -6,10 +7,6 @@ class DatabaseService{
   DatabaseService({this.uid});
   final CollectionReference brewCollection= FirebaseFirestore.instance.collection("brews");
 
-  //streams
-  Stream<QuerySnapshot> get brews{
-    return brewCollection.snapshots();
-  }
 
   //update
 Future updateUserData(String sugars, String name, int strength) async{
@@ -21,5 +18,18 @@ Future updateUserData(String sugars, String name, int strength) async{
       }
   );
 }
+//streams
+  Stream<List<Brew>> get brews{
+    return brewCollection.snapshots().map(_getBrewModelSnapshot);
+}
+List<Brew> _getBrewModelSnapshot(QuerySnapshot snapshot){
+    return snapshot.docs.map((e){
+      return Brew(
+         name: e.data()['Name'] ?? '',
+        sugars: e.data()['Sugar'] ?? '0',
+        strength: e.data()['Strength'] ?? 0
+      );
+    }).toList();
+  }
 
 }

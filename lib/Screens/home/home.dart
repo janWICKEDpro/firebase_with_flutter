@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_app/models/brew.dart';
 import 'package:firebase_app/services/auth.dart';
 import 'package:firebase_app/services/database.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,15 @@ class Home extends StatelessWidget {
  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
+    void _showbottom() {
+      showModalBottomSheet(context: context, builder: (context){
+        return Container(
+         child: Text("hi")
+        );
+      });
+    }
+    return StreamProvider<List<Brew>>.value(
+      initialData: [],
       value: DatabaseService().brews,
       child:Scaffold(
       backgroundColor: Colors.brown[50],
@@ -22,7 +31,8 @@ class Home extends StatelessWidget {
           },
               icon: Icon(Icons.account_box),
               label: Text("logout")
-          )
+          ),
+          TextButton.icon(onPressed: ()=> _showbottom(), icon: Icon(Icons.settings), label: Text("settings"))
         ],
       ),
         body: BrewList(),

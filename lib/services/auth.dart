@@ -19,8 +19,8 @@ class AuthService{
       UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       User user= result.user;
       return _getUserId(user);
+      //print(e.toString());
     }catch(e) {
-      print(e.toString());
       return null;
     }
   }

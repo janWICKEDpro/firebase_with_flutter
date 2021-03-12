@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8585dc67-be46-48e9-91cf-4a871dbde7e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Screens/home/setting_form.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/auth.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/database.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/database.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\user\firebase_app\.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1owGmlbgobaa8fq25Lxk7QkBQmc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -91,14 +93,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1286" height="237" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615311952810" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1615374200003">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1615486912889">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615374200003" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1615310714347">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615486912889" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1615574669230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1615310714347" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1615574669230" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615305288308">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_app/models/brew.dart';
 import 'package:firebase_app/services/auth.dart';
 import 'package:firebase_app/services/database.dart';
+import 'setting_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'brew_list.dart';
@@ -12,9 +13,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     void _showbottom() {
       showModalBottomSheet(context: context, builder: (context){
-        return Container(
-         child: Text("hi")
-        );
+        return Settingss();
       });
     }
     return StreamProvider<List<Brew>>.value(

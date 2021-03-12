@@ -1,17 +1,15 @@
-import 'dart:html';
-
 import 'package:firebase_app/loading.dart';
 import 'package:firebase_app/models/user.dart';
 import 'package:firebase_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Settings extends StatefulWidget {
+class Settingss extends StatefulWidget {
   @override
   _SettingsState createState() => _SettingsState();
 }
 
-class _SettingsState extends State<Settings> {
+class _SettingsState extends State<Settingss> {
   final _key = GlobalKey<FormState>();
   List<String> sugars = ['0','1''2','3'];
 

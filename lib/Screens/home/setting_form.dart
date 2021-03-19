@@ -48,7 +48,9 @@ class _SettingsState extends State<Settingss> {
                     onChanged: (val) => setState(() => _currentSugars = val),
                   ),
                   //slider
-                  Slider(
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                child: Slider(
                     divisions: 8,
                     value: (_currentStrength ?? users.strength).toDouble(),
                     activeColor: Colors.brown[_currentStrength ?? users.strength],
@@ -58,16 +60,16 @@ class _SettingsState extends State<Settingss> {
                     onChanged: (val) =>
                         setState(() => _currentStrength = val.round()),
                   ),
+                  ),
                   TextButton(onPressed: () async{
                     if(_key.currentState.validate()){
                       await DatabaseService(uid: user.uid).updateUserData(_currentSugars ?? users.sugars, _currentName ?? users.name, _currentStrength ?? users.strength);
                       Navigator.pop(context);
                       print(_currentStrength);
                     }
-
                   },
                     child: Text(
-                        "Submit"
+                        "Update"
                     ),
 
                   )

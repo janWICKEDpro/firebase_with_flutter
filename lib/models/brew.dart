@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 class Brew {
   final String sugars;
   final String name;
-  final int strength;
-  Brew({this.sugars,this.name,this.strength});
+  final int strength;a
+  Brew({@required this.sugars,this.name,this.strength});
 }

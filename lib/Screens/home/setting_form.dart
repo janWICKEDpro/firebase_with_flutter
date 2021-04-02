@@ -71,7 +71,7 @@ class _SettingsState extends State<Settingss> {
                     }
                   },
                     child: Text(
-                        "Update"
+                        "Updating"
                     ),
 
                   )

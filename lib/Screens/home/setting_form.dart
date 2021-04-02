@@ -26,7 +26,9 @@ class _SettingsState extends State<Settingss> {
             final users =snapshot.data;
             return Form(
               key: _key,
-              child: Column(
+              child: Padding(
+               padding: EdgeInsets.all(8.0),
+           child:   Column(
                 children: [
                   SizedBox(
                     height: 20,
@@ -75,6 +77,7 @@ class _SettingsState extends State<Settingss> {
                   )
                 ],
               ),
+              )
             );
           }else{
           return  Loading();

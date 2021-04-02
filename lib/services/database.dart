@@ -8,8 +8,11 @@ class DatabaseService{
   DatabaseService({this.uid});
   final CollectionReference brewCollection= FirebaseFirestore.instance.collection("brews");
 
+  Future findUser(String name) async{
+    //
+  }
 
-  //update
+  //update user data
 Future updateUserData(String sugars, String name, int strength) async{
   return await brewCollection.doc(uid).set(
       {

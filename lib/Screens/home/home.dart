@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.account_box),
               label: Text("logout")
           ),
-          TextButton.icon(onPressed: ()=> _showbottom(), icon: Icon(Icons.settings), label: Text("settings"))
+          TextButton.icon(onPressed: ()=> _showbottom(), icon: Icon(Icons.settings), label: Text("Settings"))
         ],
       ),
         body: BrewList(),

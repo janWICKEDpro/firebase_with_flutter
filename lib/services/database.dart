@@ -21,7 +21,7 @@ Future updateUserData(String sugars, String name, int strength) async{
     'Strength': strength
       }
   );
-}
+   
 //streams
   Stream<List<Brew>> get brews{
     return brewCollection.snapshots().map(_getBrewModelSnapshot);
